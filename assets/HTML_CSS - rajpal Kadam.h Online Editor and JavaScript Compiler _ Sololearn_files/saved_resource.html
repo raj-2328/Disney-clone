@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://solocode.azurewebsites.net/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>window.onerror=function(n,e,t,a,r){return console.error(r),!0};window.SL={exitedLoop:function(n){this.CodeTimer.exitedLoop(n)},shouldStopExecution:function(n){var e=this.CodeTimer.shouldStopLoop(n);return!0===e&&console.warn("Execution stopped as an infinite loop was detected."),e},CodeTimer:{programNoLongerBeingMonitored:!1,timeOfFirstCallToShouldStopLoop:0,loopExits:{},loopTimers:{},START_MONITORING_AFTER:2e3,STOP_ALL_MONITORING_TIMEOUT:5e3,MAX_TIME_IN_LOOP_WO_EXIT:2200,exitedLoop:function(n){this.loopExits[n]=!0},shouldStopLoop:function(n){if(this.programKilledSoStopMonitoring)return!0;if(this.programNoLongerBeingMonitored)return!1;if(this.loopExits[n])return!1;var e=this.getTime();if(0===this.timeOfFirstCallToShouldStopLoop)return this.timeOfFirstCallToShouldStopLoop=e,!1;var t=e-this.timeOfFirstCallToShouldStopLoop;if(t<this.START_MONITORING_AFTER)return!1;if(t>this.STOP_ALL_MONITORING_TIMEOUT)return this.programNoLongerBeingMonitored=!0,!1;try{this.checkOnInfiniteLoop(n,e)}catch(n){return this.sendErrorMessageToEditor(),this.programKilledSoStopMonitoring=!0,!0}return!1},sendErrorMessageToEditor:function(){try{if(this.shouldPostMessage()){var n={action:"infinite-loop",line:this.findAroundLineNumber()};parent.postMessage(JSON.stringify(n),"*")}else this.throwAnErrorToStopCode()}catch(n){this.throwAnErrorToStopCode()}},shouldPostMessage:function(){return document.location.href.match(/boomerang/)},throwAnErrorToStopCode:function(){throw new Error("Execution stopped as an infinite loop was detected.")},findAroundLineNumber:function(){var n=new Error,e=0;if(n.stack){var t=n.stack.match(/boomerang\S+:(\d+):\d+/);t&&(e=+t[1])}return e},checkOnInfiniteLoop:function(n,e){if(!this.loopTimers[n])return this.loopTimers[n]=e,!1;if(e-this.loopTimers[n]>this.MAX_TIME_IN_LOOP_WO_EXIT)throw new Error("Execution stopped as an infinite loop was detected.");return!0},getTime:function(){return+new Date}}};</script><style>
+
+b@-webkit-keyframes flames {
+    0% {
+    height: 2.2em;
+    -webkit-transform: rotate(0.5deg);
+    transform: rotate(0.5deg);
+    opacity: 0.8;
+    }
+    100% {
+    height: 2.5em;
+    -webkit-transform: rotate(-0.5deg)
+    transform: rotate(-0.5deg);
+    border-radius: 50% / 30%;
+    border-top-right-radius: 50% 60%;
+    border-top-left-radius: 50% 60%;
+    opacity: 1;
+    }
+    }
+    @keyframes flames {
+    0% {
+    height: 2.2em;
+    -webkit-transform: rotate(0.5deg);
+    transform: rotate(0.5deg);
+    opacity: 0.8;
+    }
+    100% {
+    height: 2.5em;
+    -webkit-transform: rotate(-0.5deg);
+    transform: rotate(-0.5deg);
+    border-radius: 50% / 30%;
+    border-top-right-radius: 50% 60%;
+    border-top-left-radius: 50% 60%;
+    opacity: 1;
+    }
+    }
+    @-webkit-keyframes candles {
+    0% {
+    height: 10em;
+    border-radius: 50% / 5%;
+    }
+    100% {
+    height: 2em;
+    border-radius: 50% / 25%;
+    }
+    }
+    @keyframes candles {
+    0% {
+    height: 10em;
+    border-radius: 50% / 5%;
+    }
+    100% {
+    height: 2em;
+    border-radius: 50% / 25%;
+    }
+    }
+    *,
+    *::before,
+    *::after {
+    box-sizing: border-box;
+    }
+    body {
+    background: skyblue;
+    color: black;
+    font-size: 12px;
+    }
+    .title {
+    text-align: center;
+    font-size: 3em;
+    }
+    .cake {
+    height: 30em;
+    width: 30em;
+    margin: 10em auto 0;
+    position: relative;
+    border-radius: 100% / 50%;
+    background: pink;
+    border-bottom: 0.25em solid black;
+    }
+    .cake::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 15em;
+    border-radius: 50%;
+    background: orange;
+    border-bottom: 0.5em solid orange;
+    z-index: 10;
+    }
+    .cake::after {
+    content: '';
+    position: absolute;
+    top: 5em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 15em;
+    border-radius: 50%;
+    border-top-right-radius: 25%;
+    border-top-left-radius: 25%;
+    background: orange;
+    box-shadow: 0 5em 0 #fff, 0 10em 0 green;;
+    }
+    .candles {
+    z-index: 20;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    height: 10em;
+    width: 2.5em;
+    position: absolute;
+    bottom: 22.5em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 50% / 5%;
+    -webkit-animation: candles 10s 2s 2 alternate;
+    animation: candles 10s 2s 2 alternate;
+    background: red;
+    box-shadow: -3.5em 5em 0 0 blue, 3.5em 5em 0 0 gold, -7em -2.5em 0 -3px red, 7em -2.5em 0 -3px orange, -10.5em 2em 0 -1px pink, 10.5em 2em 0 -1px black;
+    }
+    .candles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10px;
+    border-radius: 50%;
+    background: red;
+    box-shadow: -3.5em 5em 0 0 red, 3.5em 5em 0 0 red, -7em -2.5em 0 -3px red, 7em -2.5em 0 -3px red, -10.5em 2em 0 -1px red, 10.5em 2em 0 -1px red;
+    }
+    .candles::after {
+    content: '';
+    position: absolute;
+    top: -2em;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 50% / 40%;
+    border-top-right-radius: 50% 60%;
+    border-top-left-radius: 50% 60%;
+    background: orange;
+    height: 2.5em;
+    width: 1.5em;
+    -webkit-animation: flames 0.75s infinite alternate;
+    animation: flames 0.75s infinite alternate;
+    box-shadow: 0 0 0 1px white, -3.5em 5em 1px 0 pink, 3.5em 5em 1px 0 red, -7em -2.5em 1px 0 red, 7em -2.5em 1px 0 black, -10.5em 2em 1px 0 skyblue, 10.5em 2em 1px 0 orange;
+    }
+h1{
+    position:absolute ;
+    background-color:red;
+    color:white;
+    top:-20px;
+    border-radius:20px;
+    left:70px;
+    padding:10px;
+}
+h2{
+    position:absolute ;
+    background-color:gold;
+    color:red;
+    top:500px;
+    border-radius:20px;
+    left:80px;
+    padding:10px;
+    font-size:50px;
+}
+
+ </style>
+
+<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body style="height: max-content;">
+
+<h1 class="title">Gaytri</h1>
+
+<div class="cake">
+<div class="" candle''=""></div>
+</div>
+
+<a href="https://youtube.com/shorts/zBTTii6SCO0?feature=share" target="_blank"><h2>Let's code</h2>
+</a>
+<script>// Created by Arman Bishnoi💥💥💥💥💥💥💥💥💥💥💥💥💥💥
+
+alert("THANKS FOR WATCHING happy birthday 🎂🥳🎉🎈🎁🎊🎂🥳🎉🎈🎁🎊🎂🥳🎉🎈🎁🎊🎂🥳🎉")</script>
+</body></html>
